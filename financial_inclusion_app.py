@@ -23,9 +23,9 @@ st.write('This is a web app to classify if a person own a bank account based on 
          value of each feature. After that, click on the Predict button at the bottom to\
          see the prediction of the classifier.')
         
-country = st.sidebar.selectbox(label = 'Country', ('Rwanda','Tanzania','Kenya','Uganda'))
-location_type = st.sidebar.selectbox(label = 'Location type',('Urban','Rural'))
-cellphone_access = st.sidebar.selectbox(label = 'Cellphone access',('Yes','No'))
+country = st.sidebar.selectbox('Country', ('Rwanda','Tanzania','Kenya','Uganda'))
+location_type = st.sidebar.selectbox('Location type',('Urban','Rural'))
+cellphone_access = st.sidebar.selectbox('Cellphone access',('Yes','No'))
 household_size = st.sidebar.slider(label = 'Household size', 
                                    min_value = 1,
                                    max_value = 21,
@@ -36,11 +36,11 @@ age_of_respondent = st.sidebar.slider(label = 'Age',
                                    max_value = 100,
                                    value = 50,
                                    step = 1)
-gender_of_respondent = st.sidebar.selectbox(label = 'Gender',('Male','Female'))
-relationship_with_head = st.sidebar.selectbox(label = 'Relationship with head',('Head of Household','Spouse','Child','Parent','Other relative'))
-marital_status = st.sidebar.selectbox(label = 'Marital status',('Married/Living together','Single/Never Married','Widowed','Divorced/Seperated','Dont know'))
-education_level = st.sidebar.selectbox(label = 'Education level',('Primary education','No formal education','Secondary education','Tertiary education','Vocational/Specialised training'))
-job_type = st.sidebar.selectbox(label = 'Job type',('Self employed','Informally employed','Farming and Fishing','Remittance Dependent','Other Income','Formally employed Government','Government Dependent','Dont Know/Refuse to answer'))
+gender_of_respondent = st.sidebar.selectbox('Gender',('Male','Female'))
+relationship_with_head = st.sidebar.selectbox('Relationship with head',('Head of Household','Spouse','Child','Parent','Other relative'))
+marital_status = st.sidebar.selectbox('Marital status',('Married/Living together','Single/Never Married','Widowed','Divorced/Seperated','Dont know'))
+education_level = st.sidebar.selectbox('Education level',('Primary education','No formal education','Secondary education','Tertiary education','Vocational/Specialised training'))
+job_type = st.sidebar.selectbox('Job type',('Self employed','Informally employed','Farming and Fishing','Remittance Dependent','Other Income','Formally employed Government','Government Dependent','Dont Know/Refuse to answer'))
 
 features = {'country': country,'location_type': location_type,'cellphone_access': cellphone_access,'household_size': household_size,'age_of_respondent': age_of_respondent,'gender_of_respondent' : gender_of_respondent,'relationship_with_head' : relationship_with_head,'marital_status' : marital_status,'education_level': education_level,'job_type' : job_type}
 
