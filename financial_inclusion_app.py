@@ -19,8 +19,8 @@ with open('CatBoostApp.pkl', 'rb') as file:
     model = pickle.load(file)
 
 
-st.title('Financial inclusion Classifier Web App')
-st.write('This is a web app to classify if a person own a bank account based on \
+st.title('Financial Inclusion Classifier WebApp')
+st.write('This is a web app to classify if a person owns a bank account based on \
          several features that you can see in the sidebar. Please adjust the\
          value of each feature. After that, click on the Predict button at the bottom to\
          see the prediction of the classifier.')
@@ -47,7 +47,7 @@ job_type = st.sidebar.selectbox('Job type',('Self employed','Informally employed
 features = {'country': country,'location_type': location_type,'cellphone_access': cellphone_access,'household_size': household_size,'age_of_respondent': age_of_respondent,'gender_of_respondent' : gender_of_respondent,'relationship_with_head' : relationship_with_head,'marital_status' : marital_status,'education_level': education_level,'job_type' : job_type}
 
 features_df  = pd.DataFrame([features])
-st.dataframe(features_df)
+st.table(features_df)
 
 if st.button('Predict'):
     
