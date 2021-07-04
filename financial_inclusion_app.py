@@ -9,7 +9,6 @@ def predict_fin_inclusion(model, data_for_prediction):
     predicted_proba = model.predict_proba(data_for_prediction)
     st.write(predictions_data)
     st.write(predicted_proba[0])
-    st.write(predicted_proba[1])
     
     if predictions_data == 0:
       return 'The person does NOT own a bank account with a probability of '+ str(predicted_proba[0]) + ' %'
