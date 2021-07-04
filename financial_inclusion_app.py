@@ -2,18 +2,17 @@ import streamlit as st
 import pandas as pd
 import pickle
 import catboost
+import numpy
 
 def predict_fin_inclusion(model, data_for_prediction):
     
     predictions_data = model.predict(data_for_prediction)
-    predicted_proba = model.predict_proba(data_for_prediction)
-    st.write(predictions_data)
-    st.write(predicted_proba[0])
+    predicted_proba = model.predict_proba(data_for_prediction).tolist()
     
     if predictions_data == 0:
-      return 'The person does NOT own a bank account with a probability of '+ str(model.predict_proba(data_for_prediction)[0]) + ' %'
+      return 'The person does NOT own a bank account with a probability of '+ str(predicted_proba[0]) + ' %'
     else:
-      return 'The person OWNS a bank account with a probability of '+ str(model.predict_proba(data_for_prediction)[1]) + ' %'
+      return 'The person OWNS a bank account with a probability of '+ str(predicted_proba[1]) + ' %'
 
 with open('CatBoostApp.pkl', 'rb') as file:  
     model = pickle.load(file)
