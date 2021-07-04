@@ -9,9 +9,9 @@ def predict_fin_inclusion(model, data_for_prediction):
     predicted_proba = model.predict_proba(data_for_prediction)
 
     if predictions_data == 0:
-      return 'The person does NOT own a bank account with a probability of '+ str(predicted_proba[0]*100) + ' %'
+      return 'The person does NOT own a bank account with a probability of '+ str(predicted_proba[0]) + ' %'
     else:
-      return 'The person OWNS a bank account with a probability of '+ str(predicted_proba[1]*100) + ' %'
+      return 'The person OWNS a bank account with a probability of '+ str(predicted_proba[1]) + ' %'
 
 with open('CatBoostApp.pkl', 'rb') as file:  
     model = pickle.load(file)
