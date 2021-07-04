@@ -42,18 +42,7 @@ marital_status = st.sidebar.selectbox(label = 'Marital status',('Married/Living 
 education_level = st.sidebar.selectbox(label = 'Education level',('Primary education','No formal education','Secondary education','Tertiary education','Vocational/Specialised training'))
 job_type = st.sidebar.selectbox(label = 'Job type',('Self employed','Informally employed','Farming and Fishing','Remittance Dependent','Other Income','Formally employed Government','Government Dependent','Dont Know/Refuse to answer'))
 
-features =
- {
-  'country': country,            
-  'location_type': location_type,       
-  'cellphone_access': cellphone_access,         
-  'household_size': household_size,        
-  'age_of_respondent': age_of_respondent,        
-  'gender_of_respondent' : gender_of_respondent, 
-  'relationship_with_head' : relationship_with_head,   
-  'marital_status' : marital_status,      
-  'education_level': education_level,
-  'job_type' : job_type}
+features = {'country': country,'location_type': location_type,'cellphone_access': cellphone_access,'household_size': household_size,'age_of_respondent': age_of_respondent,'gender_of_respondent' : gender_of_respondent,'relationship_with_head' : relationship_with_head,'marital_status' : marital_status,'education_level': education_level,'job_type' : job_type}
 
 features_df  = pd.DataFrame([features])
 st.dataframe(df)
