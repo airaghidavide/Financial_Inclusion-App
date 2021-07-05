@@ -18,7 +18,7 @@ def predict_fin_inclusion(model, data_for_prediction):
 with open('CatBoostApp.pkl', 'rb') as file:  
     model = pickle.load(file)
     
-st.image('Financial-inclusion.png')
+st.image(image='Financial-inclusion.png',width=60)
 
 st.title('Financial Inclusion classifier')
 
