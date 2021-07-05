@@ -18,10 +18,9 @@ def predict_fin_inclusion(model, data_for_prediction):
 with open('CatBoostApp.pkl', 'rb') as file:  
     model = pickle.load(file)
     
+st.set_page_config(layout="wide")    
 st.image(image='Financial-inclusion.png')
-
 st.title('Financial Inclusion classifier')
-
 st.write('This is a web app to classify if a person owns a bank account based on \
          several features that you can see in the sidebar. Please adjust the\
          value of each feature. After that, click on the Predict button at the bottom to\
