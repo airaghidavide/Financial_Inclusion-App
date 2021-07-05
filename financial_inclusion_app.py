@@ -11,9 +11,9 @@ def predict_fin_inclusion(model, data_for_prediction):
     
     if predictions_data == 0:
     
-    	st.subheader('The person does NOT own a bank account with a probability of: ' + str(round(predict_probability[0][0]*100 , 3)))
+    	st.subheader('The person does NOT own a bank account with a probability of: ' + str(round(predicted_proba[0][0]*100 , 3)))
     else:
-	    st.subheader('The person OWNS a bank account with a probability of: ' + str(round(predict_probability[0][1]*100 , 3)))
+	    st.subheader('The person OWNS a bank account with a probability of: ' + str(round(predicted_proba[0][1]*100 , 3)))
     
 with open('CatBoostApp.pkl', 'rb') as file:  
     model = pickle.load(file)
@@ -47,7 +47,7 @@ job_type = st.sidebar.selectbox('Job type',('Self employed','Informally employed
 features = {'country': country,'location_type': location_type,'cellphone_access': cellphone_access,'household_size': household_size,'age_of_respondent': age_of_respondent,'gender_of_respondent' : gender_of_respondent,'relationship_with_head' : relationship_with_head,'marital_status' : marital_status,'education_level': education_level,'job_type' : job_type}
 
 features_df  = pd.DataFrame([features])
-st.dataframe(features_df,200,200)
+st.dataframe(features_df)
 
 if st.button('Predict'):
     
