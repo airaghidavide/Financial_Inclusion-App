@@ -10,15 +10,16 @@ def predict_fin_inclusion(model, data_for_prediction):
     predicted_proba = model.predict_proba(data_for_prediction).tolist()
     
     if predictions_data == 0:
-      return 'The person does NOT own a bank account with a probability of '+ str(predicted_proba[0]) + ' %'
+    
+    	st.subheader('The person does NOT own a bank account with a probability of: ' + str(round(predict_probability[0][0]*100 , 3)))
     else:
-      return 'The person OWNS a bank account with a probability of '+ str(predicted_proba[1]) + ' %'
-
+	    st.subheader('The person OWNS a bank account with a probability of: ' + str(round(predict_probability[0][1]*100 , 3)))
+    
 with open('CatBoostApp.pkl', 'rb') as file:  
     model = pickle.load(file)
 
 
-st.title('Financial Inclusion Classifier WebApp')
+st.title('Financial Inclusion classifier')
 st.write('This is a web app to classify if a person owns a bank account based on \
          several features that you can see in the sidebar. Please adjust the\
          value of each feature. After that, click on the Predict button at the bottom to\
@@ -46,10 +47,8 @@ job_type = st.sidebar.selectbox('Job type',('Self employed','Informally employed
 features = {'country': country,'location_type': location_type,'cellphone_access': cellphone_access,'household_size': household_size,'age_of_respondent': age_of_respondent,'gender_of_respondent' : gender_of_respondent,'relationship_with_head' : relationship_with_head,'marital_status' : marital_status,'education_level': education_level,'job_type' : job_type}
 
 features_df  = pd.DataFrame([features])
-st.dataframe(features_df)
+st.dataframe(features_df,200,200)
 
 if st.button('Predict'):
     
-    msg_prediction = predict_fin_inclusion(model, features_df)
-    
-    st.write(msg_prediction)
+    predict_fin_inclusion(model, features_df)
