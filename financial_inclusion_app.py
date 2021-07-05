@@ -11,9 +11,9 @@ def predict_fin_inclusion(model, data_for_prediction):
     
     if predictions_data == 0:
     
-    	st.subheader('The person does NOT own a bank account with a probability of: ' + str(round(predicted_proba[0][0]*100 , 3)))
+    	st.subheader('The person does NOT own a bank account with a probability of: ' + str(round(predicted_proba[0][0]*100 , 3)) + ' %')
     else:
-	    st.subheader('The person OWNS a bank account with a probability of: ' + str(round(predicted_proba[0][1]*100 , 3)))
+	    st.subheader('The person OWNS a bank account with a probability of: ' + str(round(predicted_proba[0][1]*100 , 3)) + ' %')
     
 with open('CatBoostApp.pkl', 'rb') as file:  
     model = pickle.load(file)
