@@ -53,4 +53,4 @@ st.write(df)
 
 if st.button('Predict'):
     
-    predict_fin_inclusion(model, features_df)
+    predict_fin_inclusion(model, df)
