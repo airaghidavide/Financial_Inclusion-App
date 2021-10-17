@@ -24,7 +24,7 @@ st.title('Financial Inclusion classifier')
 st.write('This is a web app to classify if a person owns a bank account based on \
          several features that you can see in the sidebar. Please adjust the\
          value of each feature. After that, click on the Predict button at the bottom to\
-         see the prediction of the classifier.')
+         see the prediction')
         
 country = st.sidebar.selectbox('Country', ('Rwanda','Tanzania','Kenya','Uganda'))
 location_type = st.sidebar.selectbox('Location type',('Urban','Rural'))
