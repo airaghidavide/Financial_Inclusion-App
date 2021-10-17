@@ -49,8 +49,6 @@ features = {'country': country,'location_type': location_type,'cellphone_access'
 
 df = pd.melt(pd.DataFrame([features]),value_vars=['country','location_type','cellphone_access','household_size','age_of_respondent','gender_of_respondent','relationship_with_head','marital_status','education_level','job_type'])
 
-st.write(df)
-
 if st.button('Predict'):
     
     predict_fin_inclusion(model, df)
