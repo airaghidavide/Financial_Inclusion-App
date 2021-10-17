@@ -50,8 +50,9 @@ features = {'country': country,'location_type': location_type,'cellphone_access'
 df = pd.melt(pd.DataFrame([features]),value_vars=['country','location_type','cellphone_access','household_size','age_of_respondent','gender_of_respondent','relationship_with_head','marital_status','education_level','job_type'])
 
 features_df = pd.DataFrame([features])
+new_df = pd.DataFrame(features_df)
 
-st.write(features_df)
+st.write(new_df)
 
 if st.button('Predict'):
     
