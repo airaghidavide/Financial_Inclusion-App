@@ -53,7 +53,7 @@ df_pivot = df.melt(value_vars=['country','location_type','cellphone_access','hou
 
 df_pivot['value'] = df_pivot['value'].astype(str)
 
-st.dataframe(df_pivot)
+st.table(df_pivot)
 
 if st.button('Predict'):
     
