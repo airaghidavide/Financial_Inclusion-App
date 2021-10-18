@@ -49,7 +49,11 @@ features = {'country': country,'location_type': location_type,'cellphone_access'
 
 df = pd.DataFrame([features])
 
-st.write(df.melt(value_vars=['country','location_type','cellphone_access','household_size','age_of_respondent','gender_of_respondent','relationship_with_head','marital_status','education_level','job_type']))
+df_pivot = df.melt(value_vars=['country','location_type','cellphone_access','household_size','age_of_respondent','gender_of_respondent','relationship_with_head','marital_status','education_level','job_type'])
+
+df_pivot['value'].astype(str)
+
+st.write(df_pivot)
 
 if st.button('Predict'):
     
