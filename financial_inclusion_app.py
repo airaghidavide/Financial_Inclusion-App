@@ -47,12 +47,9 @@ job_type = st.sidebar.selectbox('Job type',('Self employed','Informally employed
 
 features = {'country': country,'location_type': location_type,'cellphone_access': cellphone_access,'household_size': household_size,'age_of_respondent': age_of_respondent,'gender_of_respondent' : gender_of_respondent,'relationship_with_head' : relationship_with_head,'marital_status' : marital_status,'education_level': education_level,'job_type' : job_type}
 
-df = pd.melt(pd.DataFrame([features]),value_vars=['country','location_type','cellphone_access','household_size','age_of_respondent','gender_of_respondent','relationship_with_head','marital_status','education_level','job_type'])
+df = pd.DataFrame([features])
 
-features_df = pd.DataFrame([features])
-new_df = pd.DataFrame([df])
-
-st.write(new_df)
+st.write(df.melt(value_vars=['country','location_type','cellphone_access','household_size','age_of_respondent','gender_of_respondent','relationship_with_head','marital_status','education_level','job_type']))
 
 if st.button('Predict'):
     
