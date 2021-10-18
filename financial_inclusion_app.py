@@ -24,7 +24,7 @@ st.title('Financial Inclusion classifier')
 st.write('This is a web app to classify if a person owns a bank account based on \
          several features that you can see in the sidebar. Please adjust the\
          value of each feature. After that, click on the Predict button at the bottom to\
-         see the prediction')
+         get the prediction')
         
 country = st.sidebar.selectbox('Country', ('Rwanda','Tanzania','Kenya','Uganda'))
 location_type = st.sidebar.selectbox('Location type',('Urban','Rural'))
@@ -51,9 +51,9 @@ df = pd.DataFrame([features])
 
 df_pivot = df.melt(value_vars=['country','location_type','cellphone_access','household_size','age_of_respondent','gender_of_respondent','relationship_with_head','marital_status','education_level','job_type'])
 
-df_pivot['value'].astype(str)
+df_pivot['value'] = df_pivot['value'].astype(str)
 
-st.write(df_pivot)
+st.dataframe(df_pivot)
 
 if st.button('Predict'):
     
