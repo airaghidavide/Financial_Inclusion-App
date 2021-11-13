@@ -1,6 +1,8 @@
 
 # Financial Inclusion classifier - App
 
+🏆 Mentioned in streamlit weekly roundup: https://discuss.streamlit.io/t/weekly-roundup-memory-usage-improvements-molecule-stl-files-plotting-apps-and-more/18624
+
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/airaghidavide/financial-inclusion-app/main/financial_inclusion_app.py)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10zMgvVgpFbyxBd34N7Lg2r6OvrjYo4Rl?usp=sharing)
 [![Made withJupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter)](https://jupyter.org/try)
