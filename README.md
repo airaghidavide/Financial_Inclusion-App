@@ -40,3 +40,6 @@ Once the best model has been validated, it has been saved and used by the web ap
 | pdpipe | https://pdpipe.github.io/pdpipe/|
 | catboost | https://catboost.ai/ |
 | streamlit | https://streamlit.io/ |
+
+## App
+![Alt Text](https://user-images.githubusercontent.com/60407477/141615241-91fef26c-ba02-45b6-9522-e61a9712ba7d.gif)
